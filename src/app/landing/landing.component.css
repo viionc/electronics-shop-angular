@@ -1,0 +1,20 @@
+section {
+  width: 100%;
+  background: url("../../assets/landing-background.avif") no-repeat center;
+  background-size: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-row: 2/2;
+  height: 100%;
+}
+
+h1 {
+  margin: 0;
+  font-size: 52px;
+}
+p {
+  font-size: 26px;
+  font-weight: 600;
+  color: white;
+}
