@@ -1,3 +1,7 @@
+# Using this to learn some Angular, nothing complex.
+
+<br><br><br><br><br><br><br><br><br><br>
+
 # ElectronicsShopAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
