@@ -3,7 +3,7 @@ main {
   display: grid;
   gap: 0;
   height: 100%;
-  grid-template-rows: 10% 85% 5%;
+  grid-template-rows: 10% 4% 81% 5%;
 }
 :host {
   height: 100%;
