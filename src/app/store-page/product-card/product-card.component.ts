@@ -20,24 +20,22 @@ import { getItemById } from '../../cart-reducer/cart.selectors';
 })
 export class ProductCardComponent implements OnInit {
   @Input() product!: Product;
-  @Input() id!: string;
+  @Input() id!: number;
   src = '';
   itemAmount$: Observable<number | undefined>;
 
   ngOnInit() {
     this.src = `/assets/products/product-${this.id}.png`;
-    this.itemAmount$ = this.store.select(getItemById(parseInt(this.id)));
+    this.itemAmount$ = this.store.select(getItemById(this.id));
   }
   constructor(private store: Store<{ cart: CartReducerItem[] }>) {
-    this.itemAmount$ = this.store.select(getItemById(parseInt(this.id)));
+    this.itemAmount$ = this.store.select(getItemById(this.id));
   }
 
-  addToCart(id: string) {
-    const _id = parseInt(id);
-    this.store.dispatch(addToCart({ productId: _id }));
+  addToCart(id: number) {
+    this.store.dispatch(addToCart({ productId: id }));
   }
-  removeFromCart(id: string) {
-    const _id = parseInt(id);
-    this.store.dispatch(removeFromCart({ productId: _id }));
+  removeFromCart(id: number) {
+    this.store.dispatch(removeFromCart({ productId: id }));
   }
 }

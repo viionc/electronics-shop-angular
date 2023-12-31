@@ -17,5 +17,8 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, ProductCardComponent],
 })
 export class StoreComponent {
-  products = Object.entries(PRODUCTS);
+  products = Object.entries(PRODUCTS).map((product) => [
+    parseInt(product[0]),
+    product[1],
+  ]) as [number, Product][];
 }

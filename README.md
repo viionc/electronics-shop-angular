@@ -1,6 +1,24 @@
 # Using this to learn some Angular, nothing complex.
 
-<br><br><br><br><br><br><br><br><br><br>
+So far I have learned (kinda):
+
+- creating standalone components
+- routing
+- looping and conditional rendering
+- state management with ngRx
+- adding/remove items to/from state cart
+
+Thoughts <s>(and prayers)</s>:
+Coming from React initially Angular is quite overwhelming.
+
+A lot more files (4 per component with generate componenct via CLI) which gets a bit confusing.
+
+Syntax and ng methods aren't very intuitive at first, lots of special symbols (@, !, $, etc.) used everywhere.
+
+When subcribing to store value in ngRx you don't get an actual value, instead you receive a stream (if i understood correctly) so when you want to render something based on that value
+you have to pipe (?) it asynchronously first.
+
+<br><br><br><br>
 
 # ElectronicsShopAngular
 
