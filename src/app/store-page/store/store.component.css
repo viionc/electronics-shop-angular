@@ -3,3 +3,12 @@ section {
   display: flex;
   justify-content: center;
 }
+article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+}
+section {
+  min-height: 84vh;
+}
