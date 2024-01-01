@@ -59,7 +59,9 @@ button {
   transition: all 0.33s ease-in-out;
 }
 button:hover {
-  background-color: rgb(182, 215, 236);
+  background-color: rgb(206, 205, 205);
+  color: white;
+  border: 1px solid white;
 }
 button.bigger {
   width: auto;
