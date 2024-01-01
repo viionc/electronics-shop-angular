@@ -2,6 +2,7 @@ import { createAction, props } from '@ngrx/store';
 
 export type CartActionProps = {
   productId: number;
+  clear?: boolean;
 };
 
 export const addToCart = createAction(

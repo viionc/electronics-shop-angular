@@ -115,26 +115,27 @@ const PRODUCTS: Product[] = [
     category: 'Smart Phones',
   },
   {
-    id: 9,
+    id: 12,
     name: 'Mega TV QLED 69" 16k 240Hz',
-    description: 'Best Quality, 16 times the detail',
+    description:
+      'Best Quality, 16 times the detail, 200 trillion colors, non-scripted tv shows. It just works!',
     price: 1099,
     category: 'TVs',
   },
   {
-    id: 10,
-    name: 'Mega Dumb Phone 20',
+    id: 13,
+    name: 'Mega TV Oldschool',
     description:
-      "Budget friendly phone that can't do anything. Calls? Will randomly call someone else. Messages? Will replace words with emojis. (oh wait...)",
-    price: 39,
+      'Blast (warning: TV might explode) from the past! Time travel back to times where houses were affordable!',
+    price: 59,
     category: 'TVs',
   },
   {
-    id: 11,
-    name: 'Mega Phone Fidget',
+    id: 14,
+    name: 'Mega Cinema TV',
     description:
-      'The coolest phone ever! You will be the craziest person on every party. Warning: Not recommended for married people, this phone is a magnet for love.',
-    price: 109,
+      'Screen bigger than your room, role play being in cinema, without any kids screaming and crying. (Does not include chairs)',
+    price: 10009,
     category: 'TVs',
   },
 ];
