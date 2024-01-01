@@ -1,5 +1,6 @@
 <section>
     <article class="container">
+        <span *ngIf="products.length === 0">No items in this category.</span>
         <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
     </article>
 </section>

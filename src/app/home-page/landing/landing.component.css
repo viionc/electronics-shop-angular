@@ -33,11 +33,12 @@ p {
 }
 
 a {
-  color: #6644ff;
+  color: #44a5ff;
   text-decoration: none;
+  font-weight: 600;
 }
 a:hover {
-  color: #ff0066;
+  color: #adadd1;
   text-decoration: underline;
 }
 
