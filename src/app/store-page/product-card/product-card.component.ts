@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../../../data/products';
 import { Store } from '@ngrx/store';
 import { addToCart, removeFromCart } from '../../cart-reducer/cart.actions';
@@ -14,18 +14,24 @@ import { getItemById } from '../../cart-reducer/cart.selectors';
   styleUrl: './product-card.component.css',
   imports: [CommonModule],
 })
-export class ProductCardComponent {
+export class ProductCardComponent implements OnInit {
   @Input() product!: Product;
   itemAmount$: Observable<number | undefined>;
 
   constructor(private store: Store<{ cart: CartReducerItem[] }>) {
     this.itemAmount$ = this.store.select(getItemById(this.product?.id));
   }
+  ngOnInit() {
+    this.itemAmount$ = this.store.select(getItemById(this.product?.id));
+  }
 
-  addToCart(id: number) {
+  addItemToCart(id: number) {
     this.store.dispatch(addToCart({ productId: id }));
   }
-  removeFromCart(id: number) {
+  removeItemFromCart(id: number) {
     this.store.dispatch(removeFromCart({ productId: id }));
+  }
+  clearItemFromCart(id: number) {
+    this.store.dispatch(removeFromCart({ productId: id, clear: true }));
   }
 }

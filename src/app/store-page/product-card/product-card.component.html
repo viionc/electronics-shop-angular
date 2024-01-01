@@ -1,11 +1,15 @@
-<div>
+<div class="wrapper">
     <h2>{{product.name}}</h2>
     <img [src]="'/assets/products/product-'+ this.product.id +'.png'" alt="" />
     <p>{{product.description}}</p>
     <span>{{product.price}}$</span>
-    <button (click)="addToCart(product.id)">Add to cart</button>
+    <button *ngIf="(itemAmount$ | async) === undefined" (click)="addItemToCart(product.id)">Add to cart</button>
     <span class="remove" *ngIf="itemAmount$ | async">
-        <span>In Cart: {{itemAmount$ | async}}</span>
-        <button (click)="removeFromCart(product.id)">Remove</button>
+        <div class="button-wrapper">
+            <span>In Cart: {{itemAmount$ | async}}</span>
+            <button class="small" (click)="addItemToCart(product.id)">+</button>
+            <button class="small" (click)="removeItemFromCart(product.id)">-</button>
+            <button class="small" (click)="clearItemFromCart(product.id)">x</button>
+        </div>
     </span>
 </div>
