@@ -3,11 +3,10 @@ import { Product } from '../../../data/products';
 // import { Store } from '@ngrx/store';
 // import { Observable } from 'rxjs';
 // import { addToCart } from '../../store-state/store.actions';
-import { Output, EventEmitter } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { addToCart, removeFromCart } from '../../cart-reducer/cart.actions';
 import { CartReducerItem } from '../../cart-reducer/cart.reducer';
-import { Observable, map, take } from 'rxjs';
+import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { getItemById } from '../../cart-reducer/cart.selectors';
 
