@@ -1,9 +1,6 @@
 main {
   width: 100%;
-  display: grid;
-  gap: 0;
   height: 100%;
-  grid-template-rows: 10% 85% 5%;
 }
 :host {
   height: 100%;

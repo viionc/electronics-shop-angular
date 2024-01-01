@@ -10,16 +10,19 @@ import {
   removeFromCart,
 } from '../../../cart-reducer/cart.actions';
 import { getTotalValue } from '../../../cart-reducer/cart.selectors';
+import { ControlButtonsComponent } from '../../item-control-buttons/control-buttons.component';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
   styleUrl: 'cart.component.css',
-  imports: [CommonModule],
+  imports: [CommonModule, ControlButtonsComponent],
   template: `
     <article [class]="isOpen ? 'show' : ''">
       <div class="wrapper">
-        <button class="close" (click)="handleCart()">x</button>
+        <button class="close" (click)="handleCart()">
+          <img src="./assets/icons/close.svg" alt="close cart" />
+        </button>
         <h2>Items in your cart:</h2>
         <ul>
           <li *ngFor="let item of cart$ | async">
@@ -29,11 +32,7 @@ import { getTotalValue } from '../../../cart-reducer/cart.selectors';
             <span class="price">
               {{ getTotalPrice(item.productId, item.amount) }}$</span
             >
-            <div class="button-wrapper">
-              <button (click)="addItemToCart(item.productId)">+</button>
-              <button (click)="removeItemFromCart(item.productId)">-</button>
-              <button (click)="clearItemFromCart(item.productId)">x</button>
-            </div>
+            <app-control-buttons [id]="item.productId"></app-control-buttons>
           </li>
         </ul>
         <div class="button-wrapper">

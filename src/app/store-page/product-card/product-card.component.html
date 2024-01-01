@@ -7,9 +7,7 @@
     <span class="remove" *ngIf="itemAmount$ | async">
         <div class="button-wrapper">
             <span>In Cart: {{itemAmount$ | async}}</span>
-            <button class="small" (click)="addItemToCart(product.id)">+</button>
-            <button class="small" (click)="removeItemFromCart(product.id)">-</button>
-            <button class="small" (click)="clearItemFromCart(product.id)">x</button>
+            <app-control-buttons [id]="product.id"></app-control-buttons>
         </div>
     </span>
 </div>

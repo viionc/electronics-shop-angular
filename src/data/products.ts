@@ -55,7 +55,7 @@ const PRODUCTS: Product[] = [
     id: 4,
     name: 'Mega Mouse LBO 1',
     description:
-      'Are you tried of right clicking? Then this mouse is for you, because it only has left button! Context menus are no more, embrace left clicking.',
+      'Are you tired of right clicking? Then this mouse is for you, because it only has left button! Context menus are no more, embrace left clicking.',
     price: 49,
     category: 'Mouses',
   },

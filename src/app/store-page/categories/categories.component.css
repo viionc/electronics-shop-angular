@@ -19,6 +19,8 @@ li:hover {
   text-decoration: underline;
   background-color: #1a1a1a12;
   font-weight: 600;
+  /* transition: all 0.4s ease;
+  transform: translateY(-6px); */
 }
 
 :host {

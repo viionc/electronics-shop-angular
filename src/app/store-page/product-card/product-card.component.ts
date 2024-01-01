@@ -6,13 +6,14 @@ import { CartReducerItem } from '../../cart-reducer/cart.reducer';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { getItemById } from '../../cart-reducer/cart.selectors';
+import { ControlButtonsComponent } from '../../other-components/item-control-buttons/control-buttons.component';
 
 @Component({
   selector: 'app-product-card',
   standalone: true,
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css',
-  imports: [CommonModule],
+  imports: [CommonModule, ControlButtonsComponent],
 })
 export class ProductCardComponent implements OnInit {
   @Input() product!: Product;
