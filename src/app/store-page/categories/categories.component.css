@@ -18,6 +18,7 @@ li {
 li:hover {
   text-decoration: underline;
   background-color: #1a1a1a12;
+  font-weight: 600;
 }
 
 :host {

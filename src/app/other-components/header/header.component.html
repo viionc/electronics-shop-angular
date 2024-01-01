@@ -2,13 +2,14 @@
     <nav class="container">
         <h1>E-Shop</h1>
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/store">Our Store</a></li>
-            <li><a href="/about">About us</a></li>
+            <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+            <li><a routerLink="/store" routerLinkActive="active">Our Store</a></li>
+            <li><a routerLink="/about" routerLinkActive="active">About us</a></li>
         </ul>
         <button (click)="handleCart()">
             Cart
         </button>
+        <router-outlet></router-outlet>
     </nav>
     <app-cart [isOpen]="isOpen" (EmitEvent)="handleCart()"></app-cart>
 </header>

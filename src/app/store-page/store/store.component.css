@@ -8,6 +8,7 @@ article {
   flex-wrap: wrap;
   justify-content: center;
   gap: 4px;
+  padding: 1rem 0;
 }
 section {
   min-height: 84vh;
