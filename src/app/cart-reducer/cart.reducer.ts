@@ -1,6 +1,5 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
 import { addToCart, clearCart, removeFromCart } from './cart.actions';
-import PRODUCTS, { Product } from '../../data/products';
 
 export type CartReducerItem = {
   productId: number;
@@ -27,13 +26,14 @@ const cartFeature = createFeature({
     on(removeFromCart, (state, action) => {
       const { productId } = action;
       const index = state.findIndex((item) => item.productId === productId);
-      let temp = JSON.parse(JSON.stringify(state)) as CartReducerItem[];
+      const temp = JSON.parse(JSON.stringify(state)) as CartReducerItem[];
       temp[index].amount--;
       if (temp[index].amount === 0) {
         temp.splice(index, 1);
       }
       return temp;
-    })
+    }),
+    on(clearCart, () => initialState)
   ),
 });
 
