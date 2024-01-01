@@ -1,14 +1,17 @@
 article {
   position: fixed;
   top: 0;
-  right: -600px;
+  right: -930px;
   background-color: white;
   border-left: 1px solid #999999;
-  width: 500px;
+  width: 92%;
   height: 100dvh;
   z-index: 10;
   transition: all 0.33s ease;
-  padding: 1rem;
+  padding: 2rem 1rem;
+}
+.name {
+  display: none;
 }
 
 article.show {
@@ -16,7 +19,6 @@ article.show {
 }
 article .wrapper {
   position: relative;
-
   width: 100%;
   height: 100%;
 }
@@ -85,4 +87,13 @@ button.bigger {
   color: green;
   font-weight: 600;
   margin-right: 40px;
+}
+
+@media (min-width: 1000px) {
+  article {
+    width: 500px;
+  }
+  .name {
+    display: inline;
+  }
 }

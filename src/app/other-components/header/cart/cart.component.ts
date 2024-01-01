@@ -25,7 +25,7 @@ import { getTotalValue } from '../../../cart-reducer/cart.selectors';
           <li *ngFor="let item of cart$ | async">
             <span>{{ item.amount }}x</span>
             <img [src]="getImageSrc(item.productId)" alt="" />
-            <span> {{ getItemName(item.productId) }}</span>
+            <span class="name"> {{ getItemName(item.productId) }}</span>
             <span class="price">
               {{ getTotalPrice(item.productId, item.amount) }}$</span
             >

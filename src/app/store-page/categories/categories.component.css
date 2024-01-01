@@ -4,6 +4,7 @@ ul {
   flex-wrap: wrap;
   justify-content: center;
   margin: 0;
+  padding: 0;
 }
 
 li {
