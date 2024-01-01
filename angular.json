@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "electronics-shop-angular": {
+    "electronicsShopAngular": {
       "projectType": "application",
       "schematics": {},
       "root": "",

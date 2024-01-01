@@ -1,8 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Product } from '../../../data/products';
-// import { Store } from '@ngrx/store';
-// import { Observable } from 'rxjs';
-// import { addToCart } from '../../store-state/store.actions';
 import { Store } from '@ngrx/store';
 import { addToCart, removeFromCart } from '../../cart-reducer/cart.actions';
 import { CartReducerItem } from '../../cart-reducer/cart.reducer';
@@ -17,18 +14,12 @@ import { getItemById } from '../../cart-reducer/cart.selectors';
   styleUrl: './product-card.component.css',
   imports: [CommonModule],
 })
-export class ProductCardComponent implements OnInit {
+export class ProductCardComponent {
   @Input() product!: Product;
-  @Input() id!: number;
-  src = '';
   itemAmount$: Observable<number | undefined>;
 
-  ngOnInit() {
-    this.src = `/assets/products/product-${this.id}.png`;
-    this.itemAmount$ = this.store.select(getItemById(this.id));
-  }
   constructor(private store: Store<{ cart: CartReducerItem[] }>) {
-    this.itemAmount$ = this.store.select(getItemById(this.id));
+    this.itemAmount$ = this.store.select(getItemById(this.product?.id));
   }
 
   addToCart(id: number) {

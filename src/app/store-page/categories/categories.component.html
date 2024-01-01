@@ -1,3 +1,4 @@
 <ul class="container">
-    <li *ngFor="let category of categories;">{{category}}</li>
+    <li *ngFor="let category of categories;" [class]="category === currentCategory ? 'active' : null"
+        (click)="changeCategory(category)" (keyup)="changeCategory(category)" aria-hidden="true">{{category}}</li>
 </ul>

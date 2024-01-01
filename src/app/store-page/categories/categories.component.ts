@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { categories } from '../../../data/products';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Category, categories } from '../../../data/products';
 import { NgForOf } from '@angular/common';
 
 @Component({
@@ -10,5 +10,16 @@ import { NgForOf } from '@angular/common';
   styleUrl: './categories.component.css',
 })
 export class CategoriesComponent {
+  @Output() EmitEvent = new EventEmitter<Category | null>();
+  currentCategory: Category | null = null;
   categories = categories;
+
+  changeCategory(category: Category | null) {
+    if (category === this.currentCategory) {
+      this.currentCategory = null;
+    } else {
+      this.currentCategory = category;
+    }
+    this.EmitEvent.emit(this.currentCategory);
+  }
 }

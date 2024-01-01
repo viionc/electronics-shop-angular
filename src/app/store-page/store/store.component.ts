@@ -1,9 +1,6 @@
 // import { NgForOf } from '@angular/common';
-import { Component, EventEmitter, Input } from '@angular/core';
-import PRODUCTS, { Product } from '../../../data/products';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { addToCart } from '../../cart-reducer/cart.actions';
+import { Component, Input, OnChanges } from '@angular/core';
+import PRODUCTS, { Category, Product } from '../../../data/products';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { CommonModule } from '@angular/common';
 // import { Observable } from 'rxjs';
@@ -16,9 +13,17 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule, ProductCardComponent],
 })
-export class StoreComponent {
-  products = Object.entries(PRODUCTS).map((product) => [
-    parseInt(product[0]),
-    product[1],
-  ]) as [number, Product][];
+export class StoreComponent implements OnChanges {
+  @Input() currentCategory!: Category | null;
+  products: Product[] = PRODUCTS;
+
+  ngOnChanges() {
+    if (this.currentCategory !== null) {
+      this.products = PRODUCTS.filter((product) => {
+        return product.category === this.currentCategory;
+      });
+    } else {
+      this.products = PRODUCTS;
+    }
+  }
 }

@@ -1,6 +1,6 @@
 <main>
     <app-header></app-header>
-    <app-categories></app-categories>
-    <app-store></app-store>
+    <app-categories (EmitEvent)="changeCategory($event)"></app-categories>
+    <app-store [currentCategory]="currentCategory"></app-store>
     <app-footer></app-footer>
 </main>
