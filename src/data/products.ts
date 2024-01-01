@@ -90,5 +90,52 @@ const PRODUCTS: Product[] = [
     price: 999,
     category: 'Displays',
   },
+  {
+    id: 9,
+    name: 'Mega Smart Phone Folded',
+    description:
+      "This amazing phone is locked in permanent folded at 60 degree angle. You can't open or close it! Wow!",
+    price: 299,
+    category: 'Smart Phones',
+  },
+  {
+    id: 10,
+    name: 'Mega Dumb Phone 20',
+    description:
+      "Budget friendly phone that can't do anything. Calls? Will randomly call someone else. Messages? Will replace words with emojis. (oh wait...)",
+    price: 39,
+    category: 'Smart Phones',
+  },
+  {
+    id: 11,
+    name: 'Mega Phone Fidget',
+    description:
+      'The coolest phone ever! You will be the craziest person on every party. Warning: Not recommended for married people, this phone is a magnet for love.',
+    price: 109,
+    category: 'Smart Phones',
+  },
+  {
+    id: 9,
+    name: 'Mega TV QLED 69" 16k 240Hz',
+    description: 'Best Quality, 16 times the detail',
+    price: 1099,
+    category: 'TVs',
+  },
+  {
+    id: 10,
+    name: 'Mega Dumb Phone 20',
+    description:
+      "Budget friendly phone that can't do anything. Calls? Will randomly call someone else. Messages? Will replace words with emojis. (oh wait...)",
+    price: 39,
+    category: 'TVs',
+  },
+  {
+    id: 11,
+    name: 'Mega Phone Fidget',
+    description:
+      'The coolest phone ever! You will be the craziest person on every party. Warning: Not recommended for married people, this phone is a magnet for love.',
+    price: 109,
+    category: 'TVs',
+  },
 ];
 export default PRODUCTS;

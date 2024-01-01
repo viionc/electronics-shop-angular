@@ -6,8 +6,9 @@
             <li><a href="/store">Our Store</a></li>
             <li><a href="/about">About us</a></li>
         </ul>
-        <button>
+        <button (click)="handleCart()">
             Cart
         </button>
     </nav>
+    <app-cart [isOpen]="isOpen" (EmitEvent)="handleCart()"></app-cart>
 </header>

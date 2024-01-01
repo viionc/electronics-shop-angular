@@ -7,6 +7,7 @@ So far I have learned (kinda):
 - looping and conditional rendering
 - state management with ngRx
 - adding/remove items to/from state cart
+- filtering items by category
 
 Thoughts <s>(and prayers)</s>:
 Coming from React initially Angular is quite overwhelming.
@@ -18,6 +19,7 @@ Syntax and ng methods aren't very intuitive at first, lots of special symbols (@
 When subcribing to store value in ngRx you don't get an actual value, instead you receive a stream (if i understood correctly) so when you want to render something based on that value
 you have to pipe (?) it asynchronously first.
 
+I don't think it's possible to deploy this to github pages if you are mere mortal, deployed to vercel in 2 clicks instead.
 <br><br><br><br>
 
 # ElectronicsShopAngular
