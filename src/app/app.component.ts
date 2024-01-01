@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
+import { RouterOutlet } from '@angular/router';
 import { StorePageComponent } from './store-page/store-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
