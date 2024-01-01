@@ -39,7 +39,7 @@ const PRODUCTS: Product[] = [
     id: 2,
     name: 'Mega Keyboard P3',
     description:
-      'The best budget keyboard version. To make the build cheaper we made it so only half the keys are properly working, and we made it random so every keyboard is different! So unique!.',
+      'The best budget keyboard version. To make the build cheaper we made it so only half the keys are properly working, and we made it random so every keyboard is different! So unique!',
     price: 49,
     category: 'Keyboards',
   },
@@ -47,7 +47,7 @@ const PRODUCTS: Product[] = [
     id: 3,
     name: 'Mega Mouse L502 Pro',
     description:
-      'Mega Mouse L502 Pro is latest addition to our pro gaming (c) portfolio. Lighter than light this mouse will let you move faster than speed of light. Built-in aim bot!.',
+      'Mega Mouse L502 Pro is latest addition to our pro gaming (c) portfolio. Lighter than light this mouse will let you move faster than speed of light. Built-in aim bot!',
     price: 99,
     category: 'Mouses',
   },
@@ -66,6 +66,29 @@ const PRODUCTS: Product[] = [
       'Our newest state of the art creation! Randomly drops connection so you have to be always on alert and ready to reconnect it. No more napping during work!',
     price: 249,
     category: 'Mouses',
+  },
+  {
+    id: 6,
+    name: 'Mega Monitor 100" 560hz',
+    description:
+      "Revolutionary display made specificaly for gamers (unite)! You won't miss anything while gaming except your mom calling you for dinner.",
+    price: 409,
+    category: 'Displays',
+  },
+  {
+    id: 7,
+    name: 'Mega Monitor 3" 120ghz',
+    description:
+      "Newest addition to our monitors stock, 3 inch (that's average right) display will help you train your eyesight!",
+    price: 59,
+    category: 'Displays',
+  },
+  {
+    id: 8,
+    name: 'Mega Monitor Waller',
+    description: 'Custom made monitor, you choose how wide you want it to be! ',
+    price: 999,
+    category: 'Displays',
   },
 ];
 export default PRODUCTS;
