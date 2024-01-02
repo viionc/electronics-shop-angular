@@ -21,7 +21,7 @@ import {
 
 const slideInOut = trigger('slideInOut', [
   state('open', style({ right: 0 })),
-  state('close', style({ right: '-600px' })),
+  state('close', style({ right: '-540px' })),
   transition('open <=> close', [animate('0.3s')]),
 ]);
 

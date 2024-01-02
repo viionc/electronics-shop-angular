@@ -5,7 +5,7 @@ footer {
   gap: 16px;
   background: #1a1a1a;
   color: white;
-  height: 2.9rem;
+  height: 3.5rem;
 }
 
 p {
@@ -15,7 +15,7 @@ p {
 }
 ul {
   display: flex;
-  gap: 8px;
+  gap: 24px;
   list-style: none;
   margin: 0;
 }
@@ -25,4 +25,15 @@ a {
 }
 li:hover {
   text-decoration: underline;
+}
+
+a:hover {
+  display: flex;
+  height: 1rem;
+  transform: scale(1.2);
+  color: rgb(7, 120, 193);
+}
+
+a.github:hover {
+  color: green;
 }
