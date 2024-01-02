@@ -7,6 +7,14 @@ import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { getItemById } from '../../cart-reducer/cart.selectors';
 import { ControlButtonsComponent } from '../../other-components/item-control-buttons/control-buttons.component';
+import { trigger, transition, style, animate } from '@angular/animations';
+
+const slideToCart = trigger('slideToCart', [
+  transition(':enter', [
+    style({ top: '50%', left: '50%' }),
+    animate('0.45s', style({ top: '-2000px', left: '2500px', height: 0 })),
+  ]),
+]);
 
 @Component({
   selector: 'app-product-card',
@@ -14,10 +22,12 @@ import { ControlButtonsComponent } from '../../other-components/item-control-but
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css',
   imports: [CommonModule, ControlButtonsComponent],
+  animations: [slideToCart],
 })
 export class ProductCardComponent implements OnInit {
   @Input() product!: Product;
   itemAmount$: Observable<number | undefined>;
+  playAnimation = false;
 
   constructor(private store: Store<{ cart: CartReducerItem[] }>) {
     this.itemAmount$ = this.store.select(getItemById(this.product?.id));
@@ -27,6 +37,10 @@ export class ProductCardComponent implements OnInit {
   }
 
   addItemToCart(id: number) {
+    this.playAnimation = true;
+    setTimeout(() => {
+      this.playAnimation = false;
+    }, 400);
     this.store.dispatch(addToCart({ productId: id }));
   }
   removeItemFromCart(id: number) {

@@ -8,12 +8,21 @@
   padding: 12px;
   justify-content: space-between;
   border-radius: 4px;
+  position: relative;
 }
 
 img {
   width: 300px;
   height: 150px;
   object-fit: contain;
+}
+
+.image-for-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 p {

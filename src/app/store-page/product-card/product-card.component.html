@@ -1,6 +1,8 @@
 <div class="wrapper">
     <h2>{{product.name}}</h2>
     <img [src]="'/assets/products/product-'+ this.product.id +'.png'" alt="" />
+    <img *ngIf="playAnimation" [src]="'/assets/products/product-'+ this.product.id +'.png'" alt="close cart"
+        class="image-for-animation" @slideToCart />
     <p>{{product.description}}</p>
     <span>{{product.price}}$</span>
     <button *ngIf="(itemAmount$ | async) === undefined" (click)="addItemToCart(product.id)">Add to cart</button>

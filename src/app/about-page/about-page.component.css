@@ -7,6 +7,20 @@ main {
   justify-content: center;
   margin-bottom: 3rem;
 }
+article {
+  padding: 2rem;
+  position: relative;
+}
+article:nth-child(even)::before {
+  content: "";
+  left: -1500px;
+  right: -1500px;
+  top: 0;
+  bottom: 0;
+  background-color: #1a1a1a25;
+  position: absolute;
+  z-index: -1;
+}
 :host {
   height: 100%;
 }
@@ -16,9 +30,8 @@ main {
   flex-direction: column;
   align-items: center;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 150px 500px;
+  grid-template-rows: 100px 500px;
   column-gap: 2rem;
-  padding: 0 2rem;
   h1 {
     grid-column: 1/1;
     grid-row: 1/1;
@@ -28,6 +41,7 @@ main {
     grid-column: 2/2;
     grid-row: 1/1;
     font-size: 32px;
+    margin: 0;
   }
   img {
     grid-column: 2/2;
