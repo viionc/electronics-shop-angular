@@ -11,20 +11,35 @@ import {
 } from '../../../cart-reducer/cart.actions';
 import { getTotalValue } from '../../../cart-reducer/cart.selectors';
 import { ControlButtonsComponent } from '../../item-control-buttons/control-buttons.component';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
+
+const slideInOut = trigger('slideInOut', [
+  state('open', style({ right: 0 })),
+  state('close', style({ right: '-600px' })),
+  transition('open <=> close', [animate('0.3s')]),
+]);
 
 @Component({
   selector: 'app-cart',
   standalone: true,
   styleUrl: 'cart.component.css',
   imports: [CommonModule, ControlButtonsComponent],
+  animations: [slideInOut],
   template: `
-    <article [class]="isOpen ? 'show' : ''">
+    <article [@slideInOut]="isOpen ? 'open' : 'close'">
       <div class="wrapper">
         <button class="close" (click)="handleCart()">
           <img src="./assets/icons/close.svg" alt="close cart" />
         </button>
         <h2>Items in your cart:</h2>
         <ul>
+          <span *ngIf="(cart$ | async)?.length === 0">No items in cart.</span>
           <li *ngFor="let item of cart$ | async">
             <span>{{ item.amount }}x</span>
             <img [src]="getImageSrc(item.productId)" alt="" />
