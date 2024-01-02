@@ -1,28 +1,35 @@
 # Using this to learn some Angular, nothing complex.
 
-So far I have learned (kinda):
+Demo: https://electronics-shop-angular.vercel.app/
 
-- creating standalone components
-- routing
-- looping and conditional rendering
-- state management with ngRx
-- adding/remove items to/from state cart
-- filtering items by category
-- showing items in cart
-- clear cart
+After creating a few projects with React I wanted to try other JavaScript frameworks and choose Angular and created this simple app with landing, store, and about pages. Users can filter items by categories and add or remove items from the cart. Overall pretty straightforward app, nothing complex.
 
-Thoughts <s>(and prayers)</s>:
-Coming from React initially Angular is quite overwhelming.
+So here are some thoughts:
 
-A lot more files (4 per component with generate componenct via CLI) which gets a bit confusing.
+- At first, the file structure and syntax were a bit overwhelming. Every component has 4 files if you use the generate CLI command, which makes it a bit confusing when you want to find something specific. I got used to it later on and got better though. Also made a few components without the generate command and tested writing HTML templates inside .ts files which reduced it to 2 files per component. If I had used Tailwind I could reduce it to one file.
 
-Syntax and ng methods aren't very intuitive at first, lots of special symbols (@, !, $, etc.) used everywhere.
+- There are a lot of special characters used everywhere (!, @, $, etc) for declaring components, inputs, variables, and more. @ is used for some declarations, like Components, Inputs, or Outputs. $ is used for observable variables. ! is for TypeScript, I think, it allows you to declare a variable without initializing it,
 
-When subcribing to store value in ngRx you don't get an actual value, instead you receive a stream (if i understood correctly) so when you want to render something based on that value
-you have to pipe (?) it asynchronously first.
+- Usage of module methods (ngFor, ngIfOf, etc) feels a bit clunky, especially if coupled with NgRx state streams, definitely something to get used it, 
 
-I don't think it's possible to deploy this to github pages if you are mere mortal, deployed to vercel in 2 clicks instead.
-<br><br><br><br>
+- When subscribing to store value in NgRx you don't get an actual value, instead, you receive an observable stream (if I understood correctly) so when you want to render something based on that value you have to pipe it asynchronously first. Value is observable which means that the component will rerender when the value changes.
+
+- For a small application like this it felt pretty similar to React, there are some differences here and there, but in the end, it's the same stuff with different syntax. It probably becomes more interesting with more complex applications, but that's for later :) 
+
+- Overall it was fun, something new learned. I'll work on it a bit more and make it look nicer and prettier. 
+
+
+So far what I have learned:
+- Creating standalone and reusable components
+- Routing
+- Looping and conditional rendering
+- State management with NgRx
+- Filtering data from state
+- Store selectors
+- Event emitting to parent components
+
+
+<br>
 
 # ElectronicsShopAngular
 
