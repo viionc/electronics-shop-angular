@@ -6,10 +6,8 @@ So far I have learned (kinda):
 - routing
 - looping and conditional rendering
 - state management with ngRx
-- adding/remove items to/from state cart
-- filtering items by category
-- showing items in cart
-- clear cart
+- filtering data from state
+- standalone and reusable components
 
 Thoughts <s>(and prayers)</s>:
 Coming from React initially Angular is quite overwhelming.
