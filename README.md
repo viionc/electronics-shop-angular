@@ -27,7 +27,8 @@ So far what I have learned:
 - Filtering data from state
 - Store selectors
 - Event emitting to parent components
-- Simple animations using Angulars animations module
+- Simple animations using Angular's animations module
+- Fetching and displaying data from external API 
 
 <br>
 
