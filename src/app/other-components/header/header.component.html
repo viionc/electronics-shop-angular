@@ -1,15 +1,24 @@
 <header>
     <nav class="container">
         <h1>E-Shop</h1>
+        <button (click)="handleMenu()">
+            <img src="./assets/icons/burger.svg" alt="menu button" class="burger">
+        </button>
         <ul>
             <li><a routerLink="/" routerLinkActive="active">Home</a></li>
             <li><a routerLink="/store" routerLinkActive="active">Our Store</a></li>
             <li><a routerLink="/about" routerLinkActive="active">About us</a></li>
         </ul>
-        <button (click)="handleCart()">
+        <ul *ngIf="showMenu" class="mobile">
+            <app-close-button (EmitEvent)="handleMenu()"></app-close-button>
+            <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+            <li><a routerLink="/store" routerLinkActive="active">Our Store</a></li>
+            <li><a routerLink="/about" routerLinkActive="active">About us</a></li>
+        </ul>
+        <button (click)="handleCart()" class="cart-button">
             Cart
         </button>
         <router-outlet></router-outlet>
     </nav>
-    <app-cart [isOpen]="isOpen" (EmitEvent)="handleCart()"></app-cart>
+    <app-cart [isOpen]="showCart" (EmitEvent)="handleCart()"></app-cart>
 </header>

@@ -6,12 +6,14 @@ import { provideState, provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { cartFeatureName, cartReducer } from './cart-reducer/cart.reducer';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideStore(),
     provideState(cartFeatureName, cartReducer),
+    provideHttpClient(),
     provideAnimations(),
     provideStoreDevtools({
       maxAge: 25, // Retains last 25 states

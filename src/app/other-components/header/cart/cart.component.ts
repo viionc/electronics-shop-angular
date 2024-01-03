@@ -18,10 +18,11 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { CloseButtonComponent } from '../../close-button/close-button.component';
 
 const slideInOut = trigger('slideInOut', [
   state('open', style({ right: 0 })),
-  state('close', style({ right: '-540px' })),
+  state('close', style({ right: '-740px' })),
   transition('open <=> close', [animate('0.3s')]),
 ]);
 
@@ -29,14 +30,12 @@ const slideInOut = trigger('slideInOut', [
   selector: 'app-cart',
   standalone: true,
   styleUrl: 'cart.component.css',
-  imports: [CommonModule, ControlButtonsComponent],
+  imports: [CommonModule, ControlButtonsComponent, CloseButtonComponent],
   animations: [slideInOut],
   template: `
     <article [@slideInOut]="isOpen ? 'open' : 'close'">
       <div class="wrapper">
-        <button class="close" (click)="handleCart()">
-          <img src="./assets/icons/close.svg" alt="close cart" />
-        </button>
+        <app-close-button (EmitEvent)="handleCart()"></app-close-button>
         <h2>Items in your cart:</h2>
         <ul>
           <span *ngIf="(cart$ | async)?.length === 0">No items in cart.</span>

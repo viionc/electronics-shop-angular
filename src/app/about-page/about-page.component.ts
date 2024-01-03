@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../other-components/header/header.component';
 import { FooterComponent } from '../other-components/footer/footer.component';
@@ -8,6 +8,7 @@ import {
   slideInFromRight,
 } from '../home-page/landing/landing.component';
 import { trigger } from '@angular/animations';
+import { RandomFactService } from '../../services/randomFact.service';
 
 @Component({
   selector: 'app-about-page',
@@ -27,4 +28,20 @@ import { trigger } from '@angular/animations';
     trigger('slideFromRight', [slideInFromRight]),
   ],
 })
-export class AboutPageComponent {}
+export class AboutPageComponent implements OnInit {
+  randomFact: string = '';
+  constructor(private ranndomFactService: RandomFactService) {}
+
+  ngOnInit(): void {
+    this.fetchRandomFact();
+  }
+
+  fetchRandomFact() {
+    this.ranndomFactService.getRandomFact().subscribe((data) => {
+      this.randomFact = (data as RandomFactProps).text;
+    });
+  }
+}
+interface RandomFactProps {
+  text: string;
+}
