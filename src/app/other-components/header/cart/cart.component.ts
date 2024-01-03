@@ -9,7 +9,10 @@ import {
   clearCart,
   removeFromCart,
 } from '../../../cart-reducer/cart.actions';
-import { getTotalValue } from '../../../cart-reducer/cart.selectors';
+import {
+  StoreStateProps,
+  getTotalValue,
+} from '../../../cart-reducer/cart.selectors';
 import { ControlButtonsComponent } from '../../item-control-buttons/control-buttons.component';
 import {
   animate,
@@ -72,7 +75,7 @@ export class CartComponent {
   cart$: Observable<CartReducerItem[] | undefined>;
   total$: Observable<string>;
 
-  constructor(private store: Store<{ cart: CartReducerItem[] }>) {
+  constructor(private store: Store<StoreStateProps>) {
     this.cart$ = this.store.select('cart');
     this.total$ = this.store.select(getTotalValue);
   }

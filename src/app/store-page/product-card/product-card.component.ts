@@ -2,10 +2,12 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../../../data/products';
 import { Store } from '@ngrx/store';
 import { addToCart, removeFromCart } from '../../cart-reducer/cart.actions';
-import { CartReducerItem } from '../../cart-reducer/cart.reducer';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { getItemById } from '../../cart-reducer/cart.selectors';
+import {
+  StoreStateProps,
+  getItemById,
+} from '../../cart-reducer/cart.selectors';
 import { ControlButtonsComponent } from '../../other-components/item-control-buttons/control-buttons.component';
 import { trigger, transition, style, animate } from '@angular/animations';
 
@@ -29,7 +31,7 @@ export class ProductCardComponent implements OnInit {
   itemAmount$: Observable<number | undefined>;
   playAnimation = false;
 
-  constructor(private store: Store<{ cart: CartReducerItem[] }>) {
+  constructor(private store: Store<StoreStateProps>) {
     this.itemAmount$ = this.store.select(getItemById(this.product?.id));
   }
   ngOnInit() {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import {
   trigger,
   style,
@@ -7,6 +7,7 @@ import {
   transition,
   // ...
 } from '@angular/animations';
+import { CommonModule } from '@angular/common';
 
 const fadeIn = transition(':enter', [
   style({ opacity: 0.4 }),
@@ -15,7 +16,7 @@ const fadeIn = transition(':enter', [
 
 export const slideInFromLeft = transition(':enter', [
   style({ transform: 'translateX(-50%)' }),
-  animate('0.5s', style({ transform: 'translateX(0)' })),
+  animate('0.5s', style({ transform: 'translateX(0%)' })),
 ]);
 
 export const slideInFromRight = transition(':enter', [
@@ -26,7 +27,7 @@ export const slideInFromRight = transition(':enter', [
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, CommonModule],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
   animations: [
