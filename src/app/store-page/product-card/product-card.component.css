@@ -23,6 +23,8 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  height: 50px;
+  width: 100px;
 }
 
 p {
@@ -48,7 +50,7 @@ button {
 }
 button:hover {
   background-color: rgb(206, 205, 205);
-  color: white;
+  /* color: white; */
   border: 1px solid white;
 }
 
