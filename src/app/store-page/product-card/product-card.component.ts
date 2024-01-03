@@ -49,4 +49,11 @@ export class ProductCardComponent implements OnInit {
   clearItemFromCart(id: number) {
     this.store.dispatch(removeFromCart({ productId: id, clear: true }));
   }
+  convertToPercent(discout: number) {
+    return discout * 100 + '%!!';
+  }
+  calculatePrice(price: number, discount: number | undefined) {
+    const newPrice = discount ? price * (1 - discount) : price;
+    return newPrice.toFixed(2);
+  }
 }

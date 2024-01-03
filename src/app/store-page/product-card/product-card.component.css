@@ -68,3 +68,16 @@ button:active {
     color: black;
   }
 }
+
+.discount {
+  position: absolute;
+  top: 6px;
+  left: -10px;
+  transform: rotate(0.89turn);
+  font-size: 20px;
+  background-color: #1a1;
+  width: 60px;
+  text-align: center;
+  color: black;
+  border-radius: 6px;
+}

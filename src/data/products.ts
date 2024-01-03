@@ -14,6 +14,7 @@ export type Product = {
   description: string;
   price: number;
   category: Category;
+  discount?: number;
 };
 
 export type Category = (typeof categories)[number];
@@ -25,6 +26,7 @@ const PRODUCTS: Product[] = [
     description:
       'Newest Keyboard from Mega series. Your roommates will love the silent PeachMX Red switches, clicks are almost as silent as people when you tell a joke.',
     price: 129,
+    discount: 0.15,
     category: 'Keyboards',
   },
   {
@@ -49,6 +51,7 @@ const PRODUCTS: Product[] = [
     description:
       'Mega Mouse L502 Pro is latest addition to our pro gaming (c) portfolio. Lighter than light this mouse will let you move faster than speed of light. Built-in aim bot!',
     price: 99,
+    discount: 0.2,
     category: 'Mouses',
   },
   {
@@ -88,6 +91,7 @@ const PRODUCTS: Product[] = [
     name: 'Mega Monitor Waller',
     description: 'Custom made monitor, you choose how wide you want it to be! ',
     price: 999,
+    discount: 0.5,
     category: 'Displays',
   },
   {
@@ -104,6 +108,7 @@ const PRODUCTS: Product[] = [
     description:
       "Budget friendly phone that can't do anything. Calls? Will randomly call someone else. Messages? Will replace words with emojis. (oh wait...)",
     price: 39,
+    discount: 0.05,
     category: 'Smart Phones',
   },
   {

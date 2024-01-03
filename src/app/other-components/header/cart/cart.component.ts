@@ -44,7 +44,7 @@ const slideInOut = trigger('slideInOut', [
             <img [src]="getImageSrc(item.productId)" alt="" />
             <span class="name"> {{ getItemName(item.productId) }}</span>
             <span class="price">
-              {{ getTotalPrice(item.productId, item.amount) }}$</span
+              {{ getTotalItemPrice(item.productId, item.amount) }}$</span
             >
             <app-control-buttons [id]="item.productId"></app-control-buttons>
           </li>
@@ -70,7 +70,7 @@ export class CartComponent {
   @Output() EmitEvent = new EventEmitter();
 
   cart$: Observable<CartReducerItem[] | undefined>;
-  total$: Observable<number>;
+  total$: Observable<string>;
 
   constructor(private store: Store<{ cart: CartReducerItem[] }>) {
     this.cart$ = this.store.select('cart');
@@ -101,9 +101,13 @@ export class CartComponent {
   clearItemFromCart(id: number) {
     this.store.dispatch(removeFromCart({ productId: id, clear: true }));
   }
-  getTotalPrice(id: number, amount: number) {
+  getTotalItemPrice(id: number, amount: number) {
     const item = PRODUCTS.find((item) => item.id === id);
     if (!item) return 0;
-    return item.price * amount;
+    return (this.calculatePrice(item.price, item.discount) * amount).toFixed(2);
+  }
+  calculatePrice(price: number, discount: number | undefined) {
+    const newPrice = discount ? price * (1 - discount) : price;
+    return newPrice;
   }
 }

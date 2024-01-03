@@ -4,7 +4,8 @@
     <img *ngIf="playAnimation" [src]="'/assets/products/product-'+ this.product.id +'.png'" alt="close cart"
         class="image-for-animation" @slideToCart />
     <p>{{product.description}}</p>
-    <span>{{product.price}}$</span>
+    <span>{{calculatePrice(product.price, product.discount)}}$</span>
+    <span *ngIf="product.discount" class="discount">{{convertToPercent(product.discount)}}</span>
     <button *ngIf="(itemAmount$ | async) === undefined" (click)="addItemToCart(product.id)">Add to cart</button>
     <span class="remove" *ngIf="itemAmount$ | async">
         <div class="button-wrapper">

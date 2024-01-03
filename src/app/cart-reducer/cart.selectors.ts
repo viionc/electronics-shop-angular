@@ -9,8 +9,13 @@ export const getItemById = (id: number) =>
   });
 
 export const getTotalValue = (state: { cart: CartReducerItem[] }) =>
-  state.cart.reduce((acc, cur) => {
-    const item = PRODUCTS.find((item) => item.id === cur.productId);
-    if (!item) return acc + 0;
-    return acc + item.price * cur.amount;
-  }, 0);
+  state.cart
+    .reduce((acc, cur) => {
+      const item = PRODUCTS.find((item) => item.id === cur.productId);
+      if (!item) return acc + 0;
+      const newPrice = item.discount
+        ? item.price * (1 - item.discount)
+        : item.price;
+      return acc + newPrice * cur.amount;
+    }, 0)
+    .toFixed(2);
