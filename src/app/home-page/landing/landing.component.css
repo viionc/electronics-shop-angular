@@ -83,18 +83,20 @@ article {
 }
 
 .icon-wrapper {
+  position: relative;
   display: none;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
   grid-column: 2/2;
   grid-row: 1 / span 2;
-  position: relative;
   -webkit-animation: spin-right 120s linear infinite;
   animation: spin-right 120s linear infinite;
-  margin-left: 3rem;
+  border: 2px white dashed;
+  border-radius: 100%;
+  height: 300px;
+  width: 300px;
 
+  margin-left: 3rem;
   img {
     position: absolute;
     background-color: white;
@@ -105,6 +107,7 @@ article {
     padding: 0.5rem;
     -webkit-animation: rotate-icon 120s linear infinite;
     animation: rotate-icon 120s linear infinite;
+    z-index: 1;
   }
 
   div {
@@ -112,36 +115,43 @@ article {
     top: 50%;
     left: 50%;
     transform: translate(-50% -50%);
-    background-color: white;
   }
 
   div:hover {
-    transform: scale(1.1);
     cursor: pointer;
+    img {
+      background-color: #eeeeee;
+    }
   }
 
   .orbit-wrapper-1 {
     img {
-      top: 120px;
-      left: -60px;
+      top: 110px;
+      left: -40px;
     }
   }
   .orbit-wrapper-2 {
     img {
-      top: -120px;
-      left: -60px;
+      top: -180px;
+      left: -40px;
     }
   }
   .orbit-wrapper-3 {
     img {
-      top: 0;
+      top: -30px;
       left: -180px;
     }
   }
   .orbit-wrapper-4 {
     img {
-      top: 0;
-      left: 60px;
+      top: -30px;
+      left: 100px;
+    }
+  }
+  .orbit-wrapper-5 {
+    img {
+      top: -30px;
+      left: -40px;
     }
   }
 }

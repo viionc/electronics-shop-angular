@@ -11,8 +11,9 @@ nav {
   padding: 0 2rem;
   align-items: center;
 }
-h1 {
+img {
   margin-right: auto;
+  border-radius: 50%;
 }
 
 ul {
