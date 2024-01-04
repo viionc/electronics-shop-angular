@@ -37,6 +37,7 @@ ul {
 }
 
 li {
+  margin: 1rem 0;
   display: flex;
   height: 3rem;
   font-size: 1.2rem;
